@@ -14,7 +14,7 @@ function App() {
     
     let repeticion = false;
     for (let i = 0; i < filter.length; i++) {
-      if (filter[i] == true) {
+      if (filter[i] === true) {
         repeticion = true;
       }
     }
@@ -27,18 +27,15 @@ function App() {
     }
   }
   function sortByName() {
-    // console.log(contactos);
     const sortName = contactos.sort(function (contactA, contactB) {
       if (contactA.name < contactB.name) { return -1; }
       if (contactA.name > contactB.name) { return 1; }
       return 0;
     })
-    console.log(sortName);
     setContatcs([...sortName]);
   }
 
   function sortByPopularity() {
-    // console.log(contactos)
     const sortPopularity = contactos.sort(function (contactA, contactB) {
       if (contactB.popularity < contactA.popularity) { return -1; }
       if (contactB.popularity > contactA.popularity) { return 1; }
